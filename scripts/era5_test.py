@@ -10,7 +10,7 @@ client = cdsapi.Client(
     key=api_key
 )
 
-# Full summer 2023 - June, July, August
+# Summer 2024 - to match FVH sensor data
 client.retrieve(
     "reanalysis-era5-single-levels",
     {
@@ -21,14 +21,14 @@ client.retrieve(
             "surface_solar_radiation_downwards",
             "total_precipitation"
         ],
-        "year": "2023",
+        "year": "2024",
         "month": ["06", "07", "08"],
         "day": [f"{d:02d}" for d in range(1, 32)],
         "time": [f"{h:02d}:00" for h in range(24)],
         "area": [61, 24, 60, 26],
         "format": "netcdf4",
     },
-    "data/era5_helsinki_summer2023.nc"
+    "data/era5_helsinki_summer2024.nc"
 )
 
-print("ERA5 summer 2023 download complete!")
+print("ERA5 summer 2024 download complete!")
